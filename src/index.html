@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="index.css">
+  <script defer src="render.js"></script>
+  <title>Weather App</title>
+</head>
+
+<body>
+  <main class="container is-full">
+    <div class="container p-4">
+      <h1 class="title">Weather Report</h1>
+
+      <div class="field">
+        <label class="label">City</label>
+        <div class="control">
+          <input class="input" type="text" id="cityInput" placeholder="Enter city">
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <button class="button is-primary" id="GetWeather">Get Weather</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <h1 class="title has-text-centered mt-6" id="locationText">Location</h1>
+          <section class="is-flex container is-justify-content-space-between mt-6">
+            <section class="is-flex is-flex-direction-column">
+              <label class="subtitle has-text-centered m-1 is-bold">Country: </label>
+              <label class="subtitle has-text-centered m-1" id="country">Brazil</label>
+            </section>
+            <section class="is-flex is-flex-direction-column">
+              <label class="subtitle has-text-centered m-1">Region: </label>
+              <label class="subtitle has-text-centered m-1" id="region">Parana</label>
+            </section>
+            <section class="is-flex is-flex-direction-column">
+              <label class="subtitle has-text-centered m-1">Time: </label>
+              <label class="subtitle has-text-centered m-1" id="time">25:13:58</label>
+            </section>
+          </section>
+        </div>
+      </div>
+
+      <div class="field mt-6">
+        <div class="card is-flex is-justify-content-space-evenly">
+          <section class="is-flex is-flex-direction-column p-4">
+            <label class="label">Temp: </label>
+            <label class="label" id="temp">38ºC</label>
+          </section>
+          <section class="is-flex is-flex-direction-column p-4">
+            <label class="label">Condition: </label>
+            <label class="label" id="condition">Nublado</label>
+          </section>
+          <section class="is-flex is-flex-direction-column p-4">
+            <label class="label">Wind Kph: </label>
+            <label class="label" id="wind">27 Kph</label>
+          </section>
+          <section class="is-flex is-flex-direction-column p-4">
+            <label class="label">Humidity: </label>
+            <label class="label" id="humidity">66</label>
+          </section>
+          <img src="https://cdn.weatherapi.com/weather/64x64/night/116.png" 
+            class="image is-rounded is-align-self-center"
+            id="weatherImage">
+        </div>
+      </div>
+
+      <div id="weather-info" style="display:none;">
+        <h2 class="subtitle" id="cityName"></h2>
+
+        <div class="columns">
+          <div class="column">
+            <p><strong>Temperature:</strong> <span id="temperature"></span></p>
+            <p><strong>Humidity:</strong> <span id="humidity"></span></p>
+          </div>
+          <div class="column">
+            <img id="weather-icon" src="" alt="Weather Icon">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
